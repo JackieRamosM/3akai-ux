@@ -15,7 +15,7 @@
 
 require(['jquery','oae.core'], function($, oae) {
 
-    // Redirect the user back to the landing page if he is not logged in
+// Redirect the user back to the landing page if he is not logged in
     if (oae.data.me.anon) {
         oae.api.util.redirect().login();
     }
@@ -122,7 +122,28 @@ require(['jquery','oae.core'], function($, oae) {
                     ]
                 }
             ]
-        }
+        },
+	{
+		'id': 'bbb',
+		'title': oae.api.i18n.translate('__MSG__MY_MEETINGS__'),
+		'icon': 'icon-camera',
+		'layout': [
+			{
+				'width': 'span12',
+				'widgets': [
+					{
+						'id': 'bbb',
+						'settings': {
+							'context': oae.data.me,
+							'canManage': true
+						}
+					}
+				]
+			}
+		]
+	}
+
+
     ];
 
     /**
@@ -142,8 +163,14 @@ require(['jquery','oae.core'], function($, oae) {
     var setUpClip = function() {
         oae.api.util.template().render($('#me-clip-template'), null, $('#me-clip-container'));
     };
+/*
+	var getValue = function(){
 
-    /**
+		var x=document.getElementById("holamundo");
+  		x.addEventListener("click",alert(x.innerHTML),true);
+	};
+*/  
+  /**
      * The `oae.context.get` or `oae.context.get.<widgetname>` event can be sent by widgets
      * to get hold of the current context (i.e. current user's profile). In the first case, a
      * `oae.context.send` event will be sent out as a broadcast to all widgets listening
@@ -187,6 +214,8 @@ require(['jquery','oae.core'], function($, oae) {
     });
 
 
+
+//	getValue();
     setUpClip();
     setUpNavigation();
 
