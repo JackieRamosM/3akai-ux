@@ -70,6 +70,7 @@ requirejs.config({
         'oae.api.content': 'oae/api/oae.api.content',
         'oae.api.comment': 'oae/api/oae.api.comment',
         'oae.api.discussion': 'oae/api/oae.api.discussion',
+	
         'oae.api.follow': 'oae/api/oae.api.follow',
         'oae.api.group': 'oae/api/oae.api.group',
         'oae.api.i18n': 'oae/api/oae.api.i18n',
