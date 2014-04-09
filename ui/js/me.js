@@ -163,13 +163,7 @@ require(['jquery','oae.core'], function($, oae) {
     var setUpClip = function() {
         oae.api.util.template().render($('#me-clip-template'), null, $('#me-clip-container'));
     };
-/*
-	var getValue = function(){
-
-		var x=document.getElementById("holamundo");
-  		x.addEventListener("click",alert(x.innerHTML),true);
-	};
-*/  
+  
   /**
      * The `oae.context.get` or `oae.context.get.<widgetname>` event can be sent by widgets
      * to get hold of the current context (i.e. current user's profile). In the first case, a
@@ -215,7 +209,7 @@ require(['jquery','oae.core'], function($, oae) {
 
 
 
-//	getValue();
+
     setUpClip();
     setUpNavigation();
 
