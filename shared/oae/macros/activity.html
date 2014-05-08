@@ -77,6 +77,8 @@
         ${renderDiscussionAddToLibrarySummary(activity, actor1, actor1URL, object1, object1URL, object2, object2URL, objectCount)}
     {elseif activityType === 'discussion-create'}
         ${renderDiscussionCreateSummary(activity, actor1, actor1URL, object1, object1URL, object2, object2URL, objectCount)}
+	{elseif activityType === 'meeting-create'}
+       	${renderMeetingCreateSummary(activity, actor1, actor1URL, object1, object1URL, object2, object2URL, objectCount)}
     {elseif activityType === 'discussion-message'}
         ${renderDiscussionMessageSummary(activity, actor1, actor1URL, actor2, actor2URL, actorCount, target1, target1URL)}
     {elseif activityType === 'discussion-share'}
@@ -538,6 +540,15 @@
     {/if}
 {/macro}
 
+{macro renderMeetingCreateSummary(activity, actor1, actor1URL, object1, object1URL, object2, object2URL, objectCount)}
+    {if !objectCount}
+        __MSG__ACTIVITY_MEETING_CREATE_1__
+    {elseif objectCount === 2}
+        __MSG__ACTIVITY_MEETING_CREATE_2__
+    {else}
+        __MSG__ACTIVITY_MEETING_CREATE_2+__
+    {/if}
+{/macro}
 <!--
  * Render the end-user friendly, internationalized summary of a discussion post activity.
  *

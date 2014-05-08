@@ -260,6 +260,7 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
      * @throws {Error}                                          Error thrown when no principal ID has been provided
      */
     var getLibrary = exports.getLibrary = function(principalId, start, limit, callback) {
+		console.log(principalId);
         if (!principalId) {
             throw new Error('A user or group ID should be provided');
         }
@@ -273,7 +274,9 @@ define(['exports', 'jquery', 'underscore'], function(exports, $, _) {
             'url': '/api/discussion/library/' + principalId,
             'data': data,
             'success': function(data) {
+				console.log("data",data);
                 callback(null, data);
+				
             },
             'error': function(jqXHR, textStatus) {
                 callback({'code': jqXHR.status, 'msg': jqXHR.responseText});
